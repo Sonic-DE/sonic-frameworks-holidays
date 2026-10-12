@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.29)
+cmake_minimum_required(VERSION 3.30)
 
 set(KF_VERSION "6.30.0")
 project(KHolidays VERSION ${KF_VERSION})
@@ -24,6 +24,7 @@ include(ECMGenerateExportHeader)
 include(ECMDeprecationSettings)
 include(ECMQmlModule)
 include(ECMGenerateQDoc)
+include(ECMInstalledLibraryCheck)
 
 if(EXISTS "${PROJECT_SOURCE_DIR}/.git/")
     set(GIT_SOURCE_TARBALL TRUE)
@@ -128,7 +129,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KHOLIDAYS
 )
 
 ########### Find packages ###########
-set(REQUIRED_QT_VERSION 6.9.0)
+set(REQUIRED_QT_VERSION 6.10.0)
 find_package(
     Qt6
     ${REQUIRED_QT_VERSION}
