@@ -2,6 +2,10 @@
 
 Sonic Frameworks Holidays lets SonicDE's calendar show public holidays for your region, along with sunrise, sunset and moon phases.
 
+## Unreleased
+
+- Behind the scenes: builds with newer versions of flex, such as the one Manjaro ships.
+
 ## 6.31.0 (2026-10-20)
 
 - Behind the scenes: version update.

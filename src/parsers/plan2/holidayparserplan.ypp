@@ -93,13 +93,16 @@
 #pragma GCC diagnostic ignored "-Wunused-but-set-variable"
 #endif
 
+/* bison's api.prefix renames yylex to KHolidayslex; drop it before FlexLexer.h
+ * so FlexLexer::yylex() keeps the name the generated scanner uses. */
+#undef yylex
+
 #include "holidayparserdriverplan_p.h"
 #include "holidayscannerplan_p.h"
 
 /* this "connects" the bison parser in the driver to the flex scanner class
  * object. it defines the yylex() function call to pull the next token from the
  * current lexer object of the driver context. */
-#undef yylex
 #define yylex driver.m_scanner->lex
 
 %}
